@@ -1,0 +1,87 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #f5f6f8;
+  color: #1f2430;
+}
+
+.screen { max-width: 1200px; margin: 0 auto; padding: 24px; }
+.screen-title { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+.screen-columns { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; align-items: start; }
+
+.panel {
+  background: #fff;
+  border: 1px solid #e4e6eb;
+  border-radius: 10px;
+  padding: 20px;
+}
+.panel-title { font-size: 14px; font-weight: 600; margin: 0 0 4px; color: #2f3542; }
+.panel-subtitle { font-size: 12px; color: #8a8f98; margin-bottom: 12px; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.field { margin-bottom: 14px; position: relative; }
+.field-label { font-size: 12px; font-weight: 600; color: #555; margin-bottom: 6px; }
+label { display: block; font-size: 12px; font-weight: 600; color: #555; margin-bottom: 6px; }
+
+input, select, textarea {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid #d8dbe1;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 13px;
+  color: #1f2430;
+  background: #fff;
+}
+textarea { min-height: 60px; resize: vertical; }
+input:focus, select:focus, textarea:focus { outline: none; border-color: #4c6ef5; }
+
+.autocomplete {
+  position: absolute; z-index: 5; background: #fff; border: 1px solid #e4e6eb;
+  border-radius: 6px; width: 100%; list-style: none; margin: 4px 0 0; padding: 4px 0;
+  max-height: 160px; overflow-y: auto; box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.autocomplete li { padding: 8px 10px; font-size: 13px; cursor: pointer; }
+.autocomplete li:hover { background: #f2f4ff; }
+
+.chip-list { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 8px 0 0; }
+.chip { background: #eef1ff; color: #3b4ac0; font-size: 12px; padding: 4px 8px; border-radius: 999px; }
+.chip.removable button { background: none; border: none; color: #3b4ac0; margin-left: 4px; cursor: pointer; }
+
+.secondary-btn {
+  background: #f4f5f8; border: 1px solid #d8dbe1; border-radius: 6px; font-size: 12px;
+  padding: 8px 12px; margin: 4px 0 16px; cursor: pointer; color: #444;
+}
+
+.section-label { font-size: 13px; font-weight: 600; margin: 18px 0 10px; }
+.material-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+.add-control { display: flex; gap: 6px; }
+.add-control input { width: 160px; }
+.add-control button { white-space: nowrap; padding: 8px 10px; border-radius: 6px; border: 1px solid #d8dbe1; background: #fff; cursor: pointer; font-size: 12px; }
+.empty-hint { font-size: 12px; color: #9aa0aa; margin-top: 6px; }
+
+.sentiment-row { display: flex; gap: 20px; margin-top: 4px; }
+.sentiment-option { display: flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer; }
+.sentiment-option.active { color: #4c6ef5; font-weight: 600; }
+.sentiment-emoji { font-size: 15px; }
+
+.ai-suggestions { background: #f6f8ff; border-radius: 8px; padding: 10px 14px; margin: 12px 0; font-size: 13px; }
+.ai-suggestions ul { margin: 6px 0 0; padding-left: 18px; color: #3b4ac0; }
+
+.form-actions { display: flex; align-items: center; gap: 12px; margin-top: 16px; }
+.primary-btn { background: #4c6ef5; color: #fff; border: none; border-radius: 6px; padding: 10px 18px; font-size: 13px; font-weight: 600; cursor: pointer; }
+.primary-btn.small { padding: 8px 14px; }
+.primary-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.save-status.ok { color: #2b8a3e; font-size: 12px; }
+.save-status.error { color: #c92a2a; font-size: 12px; }
+
+.chat-panel { display: flex; flex-direction: column; height: 640px; }
+.chat-messages { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; margin: 8px 0; }
+.chat-bubble { font-size: 13px; padding: 10px 12px; border-radius: 8px; max-width: 90%; }
+.chat-bubble.assistant { background: #f4f5f8; color: #444; align-self: flex-start; }
+.chat-bubble.user { background: #4c6ef5; color: #fff; align-self: flex-end; }
+.chat-bubble.typing { font-style: italic; color: #9aa0aa; }
+.chat-input-row { display: flex; gap: 8px; }
+.chat-input-row input { flex: 1; }
